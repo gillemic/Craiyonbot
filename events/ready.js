@@ -29,7 +29,6 @@ const statuses = [
 	'Naruto: Uzumaki Chronicles',
 	'1 vs 100',
 	'Jimmie Johnson\'s Anything With an Engine',
-	'Nudder Shuffle',
 	'Little Nicky (GBC)',
 	'Antz Extreme Racing',
 	'G-Force (PS2)',

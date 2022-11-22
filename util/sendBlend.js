@@ -49,9 +49,7 @@ module.exports = {
 		// check if number between 0-8 and send file, check for delete perms, and delete reply message
 		if (blendNumber >= 0 && blendNumber <= 8) {
 			oldMessage.reply({ content: `requested by ${message.member.displayName}`, files: [`${path}/dalle${blendNumber}.png`] });
-			if (message.guild.me.permissions.has('MANAGE_MESSAGES')) {
-				setTimeout(() => message.delete(), 1000);
-			}
+			setTimeout(() => message.delete(), 1000);
 		}
 	},
 };

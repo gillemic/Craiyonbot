@@ -50,6 +50,7 @@ const statuses = [
 	'Urban Dead',
 	'King\'s Field IV',
 	'Horse Racing 2016',
+	'Titanfall 3'
 ];
 
 const { randomShuffle } = require('../util/shuffle');
@@ -60,9 +61,9 @@ module.exports = {
 	execute(client) {
 		console.log(`${new Date().toLocaleTimeString()} - Ready! Logged in as ${client.user.tag}`);
 
-		let counter = 0;
+		let counter = statuses.length - 1;
 
-		let shuffledStatuses = randomShuffle(statuses);
+		let shuffledStatuses = statuses;
 
 		const updateStatus = () => {
 			client.user?.setPresence({

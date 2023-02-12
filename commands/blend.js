@@ -1,10 +1,10 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { countImages } = require('../util/createBlend.js');
 const { loadAndProcessMyLocalImage } = require('../util/generateImage');
-// const { containsAtAll } = require('../util/doesContain');
+const { containsAtAll } = require('../util/doesContain');
 
-// const banned_words = ['blackface', 'black face', 'darkface', 'dark face'];
-// const banned_users = ['105884992055349248', '415407957371781123'];
+const banned_words = ['blackface', 'black face', 'darkface', 'dark face', 'caricature', 'racist', 'racism', 'shaughn', 'shaaughn', 'squigger', 'squigga', 'spooks', 'starving', 'child', 'children', 'hungy', 'hungry', 'kid', 'famished'];
+const banned_users = ['105884992055349248', '415407957371781123'];
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -26,11 +26,11 @@ module.exports = {
 		}
 
 		// check if banned words
-		/* const query = prompt.toLowerCase();
-		if (containsAtAll(query, banned_words) && banned_users.includes(interaction.user.id)) {
-			await interaction.editReply({ content: 'Blend prompt contains a banned word' });
+		const query = prompt.toLowerCase();
+		if (banned_users.includes(interaction.user.id && containsAtAll(query, banned_words))) {
+			await interaction.editReply({ content: 'Nope.', ephemeral: true });
 			return;
-		}*/
+		}
 
 		const folder = await countImages(prompt, message.id);
 
